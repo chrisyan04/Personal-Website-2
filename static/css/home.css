@@ -5,6 +5,10 @@
     font-family: 'Montserrat';
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     color:white;
     font-weight: bold;
@@ -109,7 +113,7 @@ nav ul li a:hover::after {
     --angle: 90deg;
     --gradX: 100%;
     --gradY: 50%;
-    --c1: rgb(68, 217, 250);
+    --c1: rgba(243, 208, 11, 0.845);
     --c2: rgba(168,239,255,0.1);
 }
 
@@ -124,7 +128,7 @@ nav ul li a:hover::after {
     width: 365px;
     height:365px;
     position:absolute; 
-    top: 35%;
+    top: 30%;
     left: 65%;
     border: 0.5rem solid;
     border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
@@ -143,7 +147,7 @@ nav ul li a:hover::after {
 }
 
 .header-text h2 span {
-    color: darkred;
+    color: rgb(235, 52, 52);
 }
 
 /*         about         */
@@ -151,6 +155,7 @@ nav ul li a:hover::after {
 .img-about-me {
     height: 500px;
     width: 330px;
+    margin-top: 10px;
 }
 
 #about {
@@ -367,7 +372,7 @@ nav ul li a:hover::after {
     margin-top: 20px;
     color: #afa22b;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 30px;
     line-height: 60px;
     background: white;
     width: 60px;
@@ -400,4 +405,171 @@ nav ul li a:hover::after {
 .btn:hover {
     background: #afa22b;
 
+}
+
+/*      contact     */
+
+.contact-left {
+    flex-basis: 35%;
+}
+
+.contact-right {
+    flex-basis: 60%;
+}
+
+.contact-left p {
+    margin-top: 30px;
+    text-shadow: none
+}
+
+.contact-left p i {
+    color: rgba(111, 51, 131, 0.88);
+    margin-right: 15px;
+    font-size: 25px;
+    text-shadow: rgb(199, 237, 203) 5px 0 5px;
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 40px;
+    margin-right: 15px;
+    color: #ebe188;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.social-icons a:hover {
+    color: rgba(222, 66, 212, 0.72);
+    transform: translateY(-5px);
+}
+
+.btn.btn2 {
+    display: inline-block;
+    background: #851ba5a2;
+    color: #fefbff;
+}
+
+.contact-right form {
+    width: 100%;
+}
+
+form input, form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #716b5291;
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 18px;
+    border-radius: 6px;
+    color: white;
+}
+
+form .btn2 {
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #464234;
+    font-weight: 300;
+    margin-top: 20px;
+    text-shadow: none;
+}
+
+/*      css for small screens       */
+nav .fa-solid{
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .img-outside {
+        width: 200px;
+        height: 200px;
+        left: 25%;
+        top: 25%;
+    }
+    .outside {
+        height: 185px;
+        width: 185px;
+    }
+    .header-text {
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h2 {
+        font-size: 30px;
+    }
+    nav .fa-solid {
+        display: block;
+        font-size: 25px;
+    }
+    nav ul {
+        background: #716b52;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li {
+        display: block;
+        margin: 25px;
+
+    }
+    nav ul .fa-solid {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .sub-title {
+        font-size: 40px;
+    }
+    .about-col-1, .about-col-2 {
+        flex-basis: 100%;
+    }
+    .img-about-me {
+        height: 330px;
+        width: 220px;
+        margin-top: -50px;
+        margin-left: 60px;
+    }
+    .about-col-1 {
+        margin-bottom: 30px;
+    }
+    .about-col-2 {
+        font-size: 14px;
+    }
+    .tab-links {
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .contact-left, .contact-right {
+        flex-basis: 100%;
+    }
+    .copyright {
+        font-size: 14px;
+    }
+    .img-about-me {
+        margin-top:-30px;
+    }
+}
+
+#msg {
+    color: #61b752;
+    margin-top: -40px;
+    display: block;
 }

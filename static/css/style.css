@@ -110,3 +110,21 @@ body{
 .bounce {
     animation: bounce 2s infinite 1s;
 }
+
+/*      css for small screens       */
+@media only screen and (max-width: 600px) {
+    #header h1 {
+        font-size: 1rem;
+    }
+    b {
+        font-size: 2rem;
+    }
+    #header h2 {
+        font-size: 1rem;
+    }
+    .img-its-me {
+        margin-left: -15%;
+        margin-right: 40%;
+        margin-top: 20px;
+    }
+}
