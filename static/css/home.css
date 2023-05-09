@@ -1,0 +1,403 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+body{
+    color:white;
+    font-weight: bold;
+    text-shadow: rgb(66, 216, 81) 3px 0 5px;
+    width: 100%;
+    height: 100vh;
+    background: rgb(14, 22, 22);
+    background-size: cover;
+}
+
+@keyframes slide-bg {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+.logo {
+    height: 80px;
+    width: 120px;
+}
+
+.container {
+    padding: 10px 7%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+    font-weight: bold;
+    text-shadow: #FC0 1px 0 10px;
+}
+
+nav ul li a::after {
+    content:'';
+    width: 0;
+    height: 3px;
+    background-color: #f5e12b;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.header-text {
+    margin-top:20%;
+    font-size: 25px;
+}
+
+.header-text p {
+    margin-bottom: -10px;
+    color: rgb(211, 183, 25);
+}
+
+.header-text h2 {
+    font-size: 60px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 90deg;
+    inherits: true;
+}
+
+@property --gradX {
+    syntax: '<percentage>';
+    initial-value: 50%;
+    inherits: true;
+}
+
+@property --gradY {
+    syntax: '<percentage>';
+    initial-value: 0%;
+    inherits: true;
+}
+
+:root {
+    --d: 1000ms;
+    --angle: 90deg;
+    --gradX: 100%;
+    --gradY: 50%;
+    --c1: rgb(68, 217, 250);
+    --c2: rgba(168,239,255,0.1);
+}
+
+#rotating-wrapper {
+    min-width: min(40rem, 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-outside{
+    width: 365px;
+    height:365px;
+    position:absolute; 
+    top: 35%;
+    left: 65%;
+    border: 0.5rem solid;
+    border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+    animation: borderRotate var(--d) linear infinite forwards;
+}
+
+.outside {
+    height: 350px;
+    width: 350px;
+}
+
+@keyframes borderRotate {
+    to {
+        --angle: 420deg;
+    }
+}
+
+.header-text h2 span {
+    color: darkred;
+}
+
+/*         about         */
+
+.img-about-me {
+    height: 500px;
+    width: 330px;
+}
+
+#about {
+    padding: 80px 0;
+    color: white;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+}
+
+.about-col-1 img {
+    border-radius: 15px;
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+}
+
+.about-col-2 p {
+    font-weight: 200;
+}
+
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+}
+
+.tab-titles {
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links {
+    text-shadow: #FC0 1px 0 10px;
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #f5e12b;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+    width: 50%;
+}
+
+.tab-contents ul li {
+    font-weight: 200;
+    list-style: none;
+    margin: 10px 0;
+    text-shadow: none;
+}
+
+.tab-contents ul li span {
+    color: #ebe188;
+    font-size: 14px;
+    text-shadow: rgb(66, 216, 81) 3px 0 5px;
+}
+
+.tab-contents ul li span span {
+    text-shadow: rgb(10, 40, 232) 3px 0 10px;
+    color:rgb(76, 146, 221);
+    font-weight: bold;
+}
+
+.tab-contents{
+    display: none;
+}
+
+.tab-contents.active-tab{
+    display: block;
+}
+
+/*      projects        */
+
+#projects{
+    padding: 30px0 0;
+}
+
+.projects-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.projects-list div {
+    background: #716b52;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+} 
+
+.projects-list div h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: none;
+}
+
+.projects-list div p {
+    font-weight: 200;
+    text-shadow: none;
+    color: white;
+}
+
+.projects-list div a {
+    text-decoration: none;
+    text-shadow: none;
+    margin-top: 20px;
+    display: inline-block;
+    font-size: 12px;
+    color: white;
+    font-weight: 500;
+}
+
+.projects-list div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+    text-shadow: rgb(88, 82, 50) 10px 0 10px;
+}
+
+.projects-list div:hover {
+    background: rgb(104, 168, 104);
+    transform: translateY(-10px);
+    text-shadow: rgb(88, 82, 50) 10px 0 10px;
+    color: rgb(111, 51, 131);
+}
+
+.projects-list div a:hover {
+    color: darkblue;
+}
+
+/*      hobbies       */
+#hobbies {
+    padding: 50px 0;
+}
+
+.hobbies-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.hobbies {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hobbies img {
+    height: 450px;
+    width: 375px;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.layer {
+    text-shadow: none;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), #ebe188);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+
+.layer h3 {
+    color: aqua;
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-family: 'Luminari', 'fantasy';
+    font-size: 30px;
+}
+
+.layer p {
+    font-size: 14px;
+    text-shadow: rgb(0, 0, 0) 10px 0 10px;
+}
+
+.layer a {
+    margin-top: 20px;
+    color: #afa22b;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.hobbies:hover img {
+    transform: scale(1.1);
+}
+
+.hobbies:hover .layer {
+    height: 100%;
+}
+
+.btn {
+    display: block;
+    margin: 50px auto;
+    text-shadow: none;
+    width: fit-content;
+    border: 1px solid #afa22b;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.5s;
+}
+
+.btn:hover {
+    background: #afa22b;
+
+}
