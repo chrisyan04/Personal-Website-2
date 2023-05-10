@@ -123,8 +123,8 @@ body{
         font-size: 1rem;
     }
     .img-its-me {
-        position: relative;
-        left: 35%;
-        top: 50%;
+        position: absolute;
+        left: 30%;
+        top: 42%;
     }
 }
