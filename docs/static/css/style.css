@@ -124,6 +124,6 @@ body{
     }
     .img-its-me {
         left: 30%;
-        top: 100%;
+        margin-top: 50%;
     }
 }
