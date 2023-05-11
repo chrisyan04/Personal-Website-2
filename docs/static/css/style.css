@@ -78,15 +78,20 @@ body{
     }
 }
 
+.its-me {
+    position: relative;
+    text-align: center;
+    top: 40%;
+}
+
 .img-its-me {
     border-radius: 50%;
     width: 150px;
     height: 150px;
     border: 1.5px solid black;
     position: relative;
-    top: 40%;
-    left: 45%;
     display: none;
+    margin: 0 auto;
 }
 
 .img-its-me:hover {
@@ -123,8 +128,6 @@ body{
         font-size: 1rem;
     }
     .img-its-me {
-        position: relative;
-        left: 30%;
-        margin-top: 50px;
+        margin: 0 auto;
     }
 }
