@@ -374,7 +374,7 @@ nav ul li a:hover::after {
     text-shadow: none;
     width: 100%;
     height: 0;
-    background: linear-gradient(rgba(0,0,0,0.6), #ebe188);
+    background: linear-gradient(rgba(0,0,0,0.6), #ed70e9);
     border-radius: 10px;
     position: absolute;
     left: 0;
